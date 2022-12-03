@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: GeradorInimigo
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46,4 +46,4 @@ MonoBehaviour:
   inimigos:
   - {fileID: 6471701817593087893, guid: 809f32a4fe2fc7e499fbe0fd3db85ca8, type: 3}
   - {fileID: 725737259927825065, guid: 74c80e57292ee4e478bb0b2e5b1a4c96, type: 3}
-  tempoEspera: 5
+  tempoEspera: 1

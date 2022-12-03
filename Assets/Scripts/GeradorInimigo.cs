@@ -26,7 +26,7 @@ public class GeradorInimigo : MonoBehaviour
         GeraInimigos();
 
     }
-
+    //checando se a espera ja zerou
     private void GeraInimigos()
     {
         //Timer pra gerar inimigos------------------------
@@ -35,10 +35,9 @@ public class GeradorInimigo : MonoBehaviour
         if (esperaInimigo <= 0f)
         {
             //Criando um inimigo
-            Instantiate(inimigos[0], transform.position, transform.rotation);
-            Instantiate(inimigos[1], new Vector2(5f, 6f), transform.rotation);
+            Vector3 posicao = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 16f), 0f);
+            Instantiate(inimigos[0], posicao, transform.rotation);
 
-            Instantiate(inimigos[1], new Vector2(5f, 0f), transform.rotation);
 
             esperaInimigo = tempoEspera;
         }
