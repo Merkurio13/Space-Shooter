@@ -34,28 +34,41 @@ public class GeradorInimigo : MonoBehaviour
 
         if (esperaInimigo <= 0f)
         {
-
-            GameObject inimigoCriado;
-
-            //Deciddindo qual inimigo vai ser cirado com base no level
-            float chance = Random.Range(0, level);
-
-            if (chance > 2)
+            int quantidade = level * 2;
+            int qtdInimigo = 0;
+            //Criando vários inimigos de uma só vez
+            while (qtdInimigo < quantidade)
             {
-                inimigoCriado = inimigos[1];
+
+
+
+                GameObject inimigoCriado;
+
+                //Deciddindo qual inimigo vai ser cirado com base no level
+                float chance = Random.Range(0, level);
+
+                if (chance > 2)
+                {
+                    inimigoCriado = inimigos[1];
+                }
+                else
+                {
+                    inimigoCriado = inimigos[0];
+                }
+
+
+                //Definindo a posição do inimigo
+                Vector3 posicao = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 16f), 0f);
+
+                //Criando o inimigo
+                Instantiate(inimigoCriado, posicao, transform.rotation);
+
+                //aumentando a quantidade de inimigo
+                qtdInimigo++;
+
+                //reiniciando o tempo de espera
+                esperaInimigo = tempoEspera;
             }
-            else
-            {
-                inimigoCriado = inimigos[0];
-            }
-
-
-            //Criando um inimigo
-            Vector3 posicao = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 16f), 0f);
-            Instantiate(inimigoCriado, posicao, transform.rotation);
-
-
-            esperaInimigo = tempoEspera;
         }
     }
 }
